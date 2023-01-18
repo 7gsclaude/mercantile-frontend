@@ -51,6 +51,7 @@ img{
   background-color: cadetblue;
   box-shadow: 2px 2px 5px rgb(47, 79, 81), -2px -2px 10px rgb(117, 195, 197), -2px -2px 5px rgb(47, 79, 81) inset, 2px 2px 5px rgb(139,232,235) inset;
   border-radius: 25px;
+  
   li {
     text-align: center;
     width: 10rem;
@@ -79,8 +80,14 @@ img{
   flex-direction: column;
   justify-content: left;
 
-  background-color: cadetblue;
+  background-color: rgb(72, 119, 120);
   box-shadow: 2px 2px 5px rgb(47, 79, 81), -2px -2px 5px rgb(139, 232, 235);
+  li {
+    text-align: center;
+    width: 10rem;
+    background-color: #5f9ea0;
+    box-shadow: 2px 2px 5px rgb(47, 79, 81), -2px -2px 5px rgb(139, 232, 235);
+  }
 }
 
 .user{
