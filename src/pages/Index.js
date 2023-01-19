@@ -1,12 +1,14 @@
-import React from 'react'
-import Item from '../components/Item'
-import { Link } from 'react-router-dom'
-import Distance from '../components/Distance'
+import React from "react";
+import Item from "../components/Item";
+import { Link } from "react-router-dom";
 
 function Index(props) {
+  const loaded = () => {
 
 
-  const loaded =() =>{
+
+    let itemList = props.items.map((item) => (
+     
    
 
       return props.items.map((item)=>(
@@ -14,31 +16,37 @@ function Index(props) {
       <div className="itemCard" key={item._id}>
         
         <Link to={`/items/${item._id}`}>
-        
-          <div className="itemImg"><img src={`${item.image}`}/></div>
+          <div className="itemImg">
+            <img src={`${item.image}`} />
+          </div>
         </Link>
+        
         <div className="itemData">
           <li>{item.name}</li>
-          {item.condition? <div>Condition: <li>{item.condition}</li></div>:null}
-          </div>
-          </div>
-          
-          
-        )
-    )
 
-    }
-    const loading = ()=>{
-      <div>Loading...</div>
-    }
+          {item.condition ? (
+            <div>
+              Condition: <li>{item.condition}</li>
+            </div>
+          ) : null}
+          <li>{item.zipcode}</li>
+        </div>
+      </div>
+    ));
 
+    return (
+      <>
+        {" "}
+        {itemList}
+      </>
+    );
+  };
+  const loading = () => {
+    <div>Loading...</div>;
+  };
 
-  return (
-    <div className='container'>
-      <Distance/>
-      {props.items? loaded(): loading}
-    </div>
-  )
+  return <div className="container">{props.items ? loaded() : loading}</div>;
+
 }
 
-export default Index
+export default Index;

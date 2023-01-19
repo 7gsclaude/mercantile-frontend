@@ -1,9 +1,9 @@
 import React from 'react'
 
 
-function AboutPage(props) {
+function About(props) {
   return (
-    <div class='about'>
+    <div className='about'>
       <p>Welcome to Mercantile. </p>
       <p>This application is used in order to trade objects of any value.</p> 
       <p>The search engine may be used in order to look up items</p>
@@ -12,4 +12,4 @@ function AboutPage(props) {
   )
 }
 
-export default AboutPage
+export default About
