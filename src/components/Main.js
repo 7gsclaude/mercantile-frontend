@@ -17,7 +17,17 @@ function Main() {
   const [items, setItems] = useState(null)
   const [user, setUser] = useState(null)
   
+ useEffect(() => {
+   if (items) {
+     setItems(items);
+   }
+ }, [items]);
   
+  useEffect(() => {
+    if (user) {
+      setUser(user)
+    }
+  }, [user]);
   const URL= "http://mercantile.herokuapp.com/"
 
   
