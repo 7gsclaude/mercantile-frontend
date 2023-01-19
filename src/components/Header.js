@@ -8,9 +8,9 @@ function Header() {
       
     <Link to="/"><h1>MERCANTILE</h1></Link>
     <div className='signin'>
-      <button onClick={login}>login</button>
-      <button onClick={logout}>logout</button> </div>
-    <div className='links'> <Link to='/wanted'>View wanted ads</Link>  search <Link to ='/about'>about </Link><Link to="/items/new">post an item</Link></div>
+      <button onClick={login}>Login</button>
+      <button onClick={logout}>Logout</button> </div>
+    <div className='links'> <Link to='/wanted'>View Wanted Ads</Link>  Search <Link to ='/items'>Listings</Link><Link to="/items/new">Create a Listing</Link></div>
     </div>
     </>
   )

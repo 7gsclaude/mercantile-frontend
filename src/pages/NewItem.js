@@ -1,15 +1,20 @@
-import React from "react";
-import { useState,useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
+  import { auth } from "../firebase";
+  import { getAuth } from "firebase/auth"; 
 
 function NewItem(props) {
-  const formFields = {
-    name: '',
-    condition: '',
-  };
+  const navigate = useNavigate()
+  
+    const formFields = {
+      name: '',
+      description: '',
+      condition: '',
+      image: '',
+      user: 'L33t Khajiit',
+      zipcode: '12345'
+    }
 
-const navigate = useNavigate();
 
   //state to hold formData
   const [newForm, setNewForm] = useState(formFields);
@@ -34,12 +39,11 @@ const navigate = useNavigate();
     const handleSubmit = (event) => {    
         event.preventDefault();
             props.createItem(newForm);
-              setNewForm(formFields);
-                navigate("/");
-
+                setNewForm(formFields)
+                navigate('/items')
                  };
     
-  return (
+  return (<>
     <div className="newitem">
       
         <form onSubmit={handleSubmit}>
@@ -60,19 +64,25 @@ const navigate = useNavigate();
             <option value="good">good</option>
             <option value="fair">fair</option>
             <option value="used">used</option>
-          </select>
-          <input
-            type="text"
-            value={newForm.description}
-            name="description"
-            placeholder="description"
-            onChange={handleChange}
-          />
+        </select>
+        <input
+          type="text"
+          value={newForm.description}
+          name="description"
+          placeholder="description"
+          onChange={handleChange}
+        />
+                <input 
+        type="text"
+        value={newForm.user}
+        name="user"
+        className="hidden" 
+        onChange={handleChange}/>
 
-          <input type="submit" value="create item" />
-
-        </form>
+        <input type="submit" value="Create Listing" />
+      </form>
     </div>
+    </>
   );
 }
 
